@@ -1,0 +1,47 @@
+.pageContent {
+  background-color: rgba(230, 230, 230, .1);
+  padding-top: 60px;
+  font-weight: 300;
+  padding-bottom: 50px;
+}
+
+.pageContent p {
+  line-height: 25px;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.pageContent .pageHeader {
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.pageContent .pageSubHeader {
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  color: #555;
+}
+
+.pageContent .content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.pageContent .contentItem {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.pageContent .content .imageContainer img {
+  border-radius: 50%;
+  width: 150px;
+  border: solid 1px rgba(100, 100, 100, .2);
+  padding: 3px;
+}

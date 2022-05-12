@@ -1,0 +1,34 @@
+.breadcrumbs {
+  position: relative;
+  background: transparent;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.breadcrumbsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 22px;
+  padding: 10px 0;
+  /* border-right: solid 1px rgba(100, 100, 100, .1) */
+}
+
+.breadcrumbsContainer>* {
+  position: relative;
+  letter-spacing: .9px;
+  /* padding-right: 10px; */
+}
+
+.breadcrumbsContainer>*:not(:last-child):after {
+  content: '>';
+  font-size: 10px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: silver;
+  vertical-align: middle;
+}
+
+.breadcrumb_link {
+  color: silver;
+}
