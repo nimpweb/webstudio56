@@ -4,7 +4,7 @@ import MainPage from '../components/MainPage';
 import TopHeader from '../components/TopHeader';
 
 export default function Home() {
-  const isUnderconstruction = true;
+  const isUnderconstruction = false;
   return (
     <div>
       <Head>
