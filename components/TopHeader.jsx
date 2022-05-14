@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import Popup from '../components/Popup'
 import s from '../styles/topHeader.module.css'
 
 function TopHeader() {
+
+  const [popupVisible, setPopupVisible] = useState(false)
+
   return (
     <div className="pageWidthContainer">
       <header className={s.header}>
@@ -25,7 +29,8 @@ function TopHeader() {
         <div className={s.headerRight}>
           <Link className={s.headerMenuLink} href="tel:89228960175">+7(922)896-01-75</Link>
           <div>
-            <button className={s.headerMenuButton}>Подать заявку</button>
+            <button className={s.headerMenuButton} onClick={ () => setPopupVisible(true)}>Подать заявку</button>
+            { popupVisible &&  <Popup onClose={() => setPopupVisible(false)} visible={ popupVisible } />}
           </div>
         </div>
     </header>
