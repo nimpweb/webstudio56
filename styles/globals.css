@@ -5,14 +5,14 @@
   --hover-color: orangered;
 }
 
-
 * {
   margin: 0;
   padding: 0;
-    line-height: 20px;
-      color: var(--default-color);
-      font-family: 'Fira Sans', sans-serif;
-    }
+  box-sizing: border-box;
+  line-height: 20px;
+    color: var(--default-color);
+    font-family: 'Fira Sans', sans-serif;
+  }
     
     h3 {
       text-transform: uppercase;

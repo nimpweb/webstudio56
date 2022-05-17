@@ -69,8 +69,8 @@
 
 .buttonsContainer {
   margin-top: 10px;
-  border-top: solid 1px rgba(200, 200, 200, .4);
-  padding-top: 10px;
+  /* border-top: solid 1px rgba(200, 200, 200, .4); */
+    /* padding-top: 10px; */
 }
 
 .button {
@@ -79,21 +79,8 @@
   padding: 10px;
   outline: none;
   width: 100%;
-  border: solid 2px var(--default-color);
+  border: solid 2px rgba(100, 100, 100, .2);
   cursor: pointer;
-  transition: all .5 ease;
-  -webkit-transition: all .5 ease;
-  -moz-transition: all .5 ease;
-  -ms-transition: all .5 ease;
-  -o-transition: all .5 ease;
-}
-
-.button:hover {
-  transform: scale(1.05);
-  -webkit-transform: scale(1.05);
-  -moz-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  -o-transform: scale(1.05);
 }
 
 .successText {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import { motion }  from 'framer-motion'
 import s from '../styles/popup.module.css'
 
@@ -9,7 +10,7 @@ const Popup = ( props ) => {
   const [topPosition, setTopPosition] = useState(0);
 
 
-  const width = props?.width || 300
+  const width = props?.width || 400
   const height = props?.width || 330
   const duration = 0.5
 
@@ -33,7 +34,16 @@ const Popup = ( props ) => {
     let data = {}
     for (let [key, value] of formData) data[key] = value
 
-    handleClosing();
+    axios({
+      method: 'POST',
+      url: '/api/mailer',
+      data: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(response => {
+      handleClosing();
+    }).catch(reponse => console.log(reponse));
   }
 
   return (
@@ -44,14 +54,19 @@ const Popup = ( props ) => {
         <h2 className={s.title}>Свяжитесь с нами</h2>
         <div className={s.content}>
           <form onSubmit={handleSubmitPopup}>
-            <input className={s.popupInput} type="text" name="name" placeholder='Как к Вам обращаться?'/>
-            <input className={s.popupInput} type="tel" name="phone" placeholder='Укажите Ваш телефон для связи'/>
-            <textarea className={s.popupInput} name="comments" placeholder='Ваши пожелания'/>
-            <motion.div className={s.successText}>
-              Ваше сообщение успешно отправлено!
-            </motion.div>
+            <input className={s.popupInput} type="text" name="clientName" placeholder='Как к Вам обращаться?'/>
+            <input className={s.popupInput} type="tel" name="clientPhone" placeholder='Укажите Ваш телефон для связи'/>
+            <textarea className={s.popupInput} name="clientComment" placeholder='Ваши пожелания'/>
             <div className={s.buttonsContainer}>
-            <motion.button className={s.button} >Отправить</motion.button>
+            <motion.button 
+              className={s.button} 
+              whileHover={{
+                scale: 1.05,
+                transition: {
+                  duration: .5
+                }
+              }} 
+            >Отправить</motion.button>
           </div>
           </form>
         </div>

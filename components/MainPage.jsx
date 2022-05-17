@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import s from '../styles/home.module.css';
+import Popup from './Popup';
 
 
 const MainPage = () => {
+  const [popupVisible, setPopupVisible] = useState(false)
   return (
     <>
         <section className={s.sectionHello}>
@@ -14,7 +16,7 @@ const MainPage = () => {
                 <h1>Разработка сайтов любой сложности</h1>
                 <h4>Это могут быть не только сайты, а также CRM, калькуляторы и т.п.</h4>
                 <div className="text-left w-100">
-                  <button className={s.section_hello_left_button}>Подать заявку</button>
+                  <button className={s.section_hello_left_button} onClick={ () => setPopupVisible(true)}>Подать заявку</button>
                   <p className="white-text">
                     <sup>*</sup> Нажимте кнопку чтобы сделать заказ онлайн
                   </p>
@@ -279,9 +281,10 @@ const MainPage = () => {
               <h3>Сделайте первый шаг к привлечению клиентов</h3>
               <h5>Оставьте заявку и мы Вам перезвоним в удобное для Вас время</h5>
             </div>
-            <button>Оставить заявку</button>
+            <button onClick={() => setPopupVisible(true)}>Оставить заявку</button>
           </div>
         </section>    
+        { popupVisible &&  <Popup onClose={() => setPopupVisible(false)} visible={ popupVisible } />}
     </>
   )
 }
