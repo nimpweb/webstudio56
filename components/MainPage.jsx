@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import s from '../styles/home.module.css';
 import Popup from './Popup';
+import db from '../db.json'
 
 
 const MainPage = () => {
@@ -60,86 +61,35 @@ const MainPage = () => {
               !
             </p>
             <div className={s.worksContainer}>
-              <div className={s.worksItem}>
-                <a className={s.imageLink} href="#">
-                  <Image
-                    className={s.worksItemImage}
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="top"
-                    src="/images/works/site_3.png"
-                    alt="work"
-                  />
-                </a>
-                <h5>Сайт-визитка компании &quot;Адонис&quot;</h5>
-                <p className={s.content}>
-                  Компания занимающаяся деятельностю по реализации оргтехники в оренбурге и регионах
-                </p>
-                <p className={s.content}>
-                  CMS: <strong>Joomla</strong>
-                </p>
-                <div className={s.buttonsContainer}>
-                  <Link className={s.buttonLeft} href="#">
-                    Просмотр
-                  </Link>
-                  <button className={s.buttonRight}>Хочу такой же</button>
-                </div>
-              </div>
-              <div className={s.worksItem}>
-                <a className={s.imageLink} href="#">
-                  <Image
-                    className={s.worksItemImage}
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="top"
-                    src="/images/works/site_2.png"
-                    alt="work"
-                  />
-                </a>
-                <h5>Интернет-магазин компании &quot;Адонис&quot;</h5>
-                <p className={s.content}>
-                  Специализируется на продаже принтеров, сканеров, оригинальных/неоригинальных
-                  картриджей
-                </p>
-                <p className={s.content}>
-                  CMS: <strong>самописная</strong>
-                </p>
-                <div className={s.buttonsContainer}>
-                  <a className={s.buttonLeft} href="#">
-                    Просмотр
-                  </a>
-                  <button className={s.buttonRight}>Хочу такой же</button>
-                </div>
-              </div>
-              <div className={s.worksItem}>
-                <Link href="/works/111">
-                  <a className={s.imageLink}>
+              { db.sites.map(site => (
+                <div key={site.id} className={s.worksItem}>
+                <Link href={`/works/${site.id}`}>
+                  <a className={s.imageLink} >
                     <Image
                       className={s.worksItemImage}
                       layout="fill"
                       objectFit="cover"
                       objectPosition="top"
-                      src="/images/works/site_1.png"
-                      alt="work"
+                      src={site.image}
+                      alt={site.title}
                     />
                   </a>
                 </Link>
-                <h5>Интеренет-магазин &quot;Мегаком&quot;</h5>
+                <h5>{site.title}</h5>
                 <p className={s.content}>
-                  Интернет-магазин по продаже товаров для электричества, счетчики электроэнегии,
-                  розтки и т.п.{' '}
+                  {site.content}
                 </p>
                 <p className={s.content}>
-                  CMS: <strong>Самописная</strong>
+                  CMS: <strong>{site.cms}</strong>
                 </p>
-                <p>&nbsp;</p>
                 <div className={s.buttonsContainer}>
-                  <a className={s.buttonLeft} href="#">
+                  <Link className={s.buttonLeft} href={`/works/${site.id}`}>
                     Просмотр
-                  </a>
+                  </Link>
                   <button className={s.buttonRight}>Хочу такой же</button>
                 </div>
-              </div>
+              </div>                
+              )) }
             </div>
             <div className="text-center mt40">
               Другие варинты вы можете просмотреть{' '}
