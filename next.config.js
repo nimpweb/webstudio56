@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
+    siteUrl: 'https://webstudio56.ru',
     mailSendTo: 'nimpweb@yandex.ru',
     mailSendFrom: 'nimpweb@yandex.ru',
     mailConfiguration: {
