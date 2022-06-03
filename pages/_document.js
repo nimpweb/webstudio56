@@ -7,6 +7,7 @@ export default class Document extends NextDocument {
         <Head>
           <meta charSet="UTF-8" />
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+          <meta name="yandex-verification" content="021b41254781ef95" />
         </Head>
         <body>
           <noscript>
