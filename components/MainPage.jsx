@@ -4,12 +4,16 @@ import Link from 'next/link';
 import s from '../styles/home.module.css';
 import Popup from './Popup';
 import db from '../db.json'
+import Head from 'next/head';
 
 
 const MainPage = () => {
   const [popupVisible, setPopupVisible] = useState(false)
   return (
     <>
+    <Head>
+    <meta name="yandex-verification" content="021b41254781ef95" />
+    </Head>
         <section className={s.sectionHello}>
           <div className="pageWidthContainer">
             <div className="d-flex h-100">
