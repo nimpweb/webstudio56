@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import '../styles/globals.css';
+import '../public/template/assets/css/styles.css';
 
 function MyApp({ Component, pageProps, router }) {
   return (

@@ -3,4 +3,4 @@ const config = {
   generateRobotTxt: true,
 };
 
-export default config;
+module.exports = config;

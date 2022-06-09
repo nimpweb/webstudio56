@@ -18,7 +18,7 @@ const Popup = ( props ) => {
     setTopPosition(
       (window.innerHeight - height) / 2
     )
-  }, [])
+  }, [height])
 
   const handleClosing = () => {
     setOpa(0)
