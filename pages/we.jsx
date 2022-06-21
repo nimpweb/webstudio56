@@ -8,6 +8,8 @@ const We =() => {
   return (
     <Page 
       title="Наша команда" 
+      pageTitle="Наша команда"
+      pageDescription="Webstudio56 мы помогаем сделать то что Вам нужно"
       breadcrumbs={[
         { title: 'Главная', link: '/'},
         { title: 'Наша команда', link: ''},

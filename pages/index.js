@@ -13,6 +13,7 @@ export default function Home() {
         {/* <link rel="stylesheet" href="./assets/css/styles.css" /> */}
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
         <title>Webstudio56</title>
+        <meta name="description" content="Webstudio56 студия для создания правильного сайта" />
       </Head>
 
       {isUnderconstruction ? (

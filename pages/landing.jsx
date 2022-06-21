@@ -8,6 +8,8 @@ const Landing =() => {
   return (
     <Page 
       title="Landing page" 
+      pageTitle="Landing page"
+      pageDescription="Что такое landingpage и для чего он нужен"
       subTitle="Что это и для чего он нужен?"
       breadcrumbs={[
         { title: 'Главная', link: '/'},

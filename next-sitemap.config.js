@@ -14,12 +14,12 @@ const config = {
       hreflag: 'ru',
     },
   ],
-  transform: async (confing, path) => {
+  transform: async (config, path) => {
     return {
       loc: path,
       changefreq: config.changefreq,
       priority: config.priority,
-      lastmod: config.autoLastMod ? new Date().toISOString() : undefined,
+      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
       alternateRefs: config.alternateRefs ?? [],
     };
   },

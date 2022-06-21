@@ -8,12 +8,12 @@ import styled from 'styled-components'
 const Services = () => {
   return (
     <>
-    <Head>
-      <title>Услуги::Webstudio56</title>
-    </Head>
       <Page
         title="Услуги"
         subTitle="которые мы можем Вам оказать"
+        pageTitle="Услуги" 
+        pageDescription={`Webstudio56, оказываем услуги в создании сайтов`}
+
         breadcrumbs={[
           { title: 'Главная', link: '/'},
           { title: 'Услуги', link: ''},
