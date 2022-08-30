@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
   env: {
     siteUrl: 'https://webstudio56.ru',
     mailSendTo: 'nimpweb@yandex.ru',
