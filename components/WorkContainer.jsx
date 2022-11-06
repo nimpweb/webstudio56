@@ -14,12 +14,12 @@ export const WorkItem = ( { link, imageSource, title, text, cms } ) => {
             layout="fill"
             objectFit="cover"
             objectPosition="top"
-            src={`/images/works/${imageSource}`}
+            src={imageSource}
             alt={title}
           />
         </ImageContainer>
       </Link>
-      <h5>{title}</h5>
+      <CardTitle>{title}</CardTitle>
       <Content>{text}</Content>
       <Content>CMS: <strong>{cms}</strong></Content>
       <ButtonsContainer>
@@ -57,7 +57,14 @@ height: 200px;
 margin-bottom: 20px;
 cursor: pointer;
 `
-
+const CardTitle = styled.h5`
+  color: lightslategray;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 5px 5px rgb(200, 200, 200);
+  text-align: center;
+`
 const WorksItem = styled.div`
   width: 300px;
   margin-top: 20px;
@@ -68,7 +75,10 @@ const Content = styled.p`
   line-height: 22px;
   display: flex;
   flex-direction: row;
-  text-align: justify;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 10px;
 `
 

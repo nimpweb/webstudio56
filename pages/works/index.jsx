@@ -1,11 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
 import Page from '../../components/Page'
 import WorksContainer from '../../components/WorkContainer'
+import db from '../../db.json'
 
 
 const Works =() => {
+  const [sites, setSites] = useState([])
+  const [sitesFilterItems, setSitesFilterItems] = useState([])
+
+  useEffect( () => {
+    setSites([...db['sites']])
+    setSitesFilterItems([...db['sites_filter_items']])
+  }, [db])
+
+  const FilterElements = ( data ) => {
+    if (!data) return (<p>loading data...</p>)
+    if (!data.data) return (<p>not data loading...</p>)
+    return (
+      <FilterContainer>
+        { data.data.map(f => {
+          return <FilterItem key={f.id}>
+            <Image 
+              key={f.id}
+              layout="fixed"
+              width={f.width}
+              height={f.height}
+              src={f.src}
+              alt={f.title}
+            />
+            { f.title }
+          </FilterItem>
+        })
+      }
+      </FilterContainer>
+    )
+  }
+
   return (
     <>
       <Page
@@ -19,48 +51,7 @@ const Works =() => {
         ]}
       >
         <div className="pageWidthContainer">
-          <FilterContainer>
-            <FilterItem>
-              <Image 
-                  layout="fixed"
-                  width={40}
-                  height={40}
-                  src="/images/works/categories/landing.png"
-                  alt="Landingpages"
-                />
-                Лэндинги
-            </FilterItem>
-            <FilterItem>
-              <Image 
-                    layout="fixed"
-                    width={40}
-                    height={40}
-                    src="/images/works/categories/vizitka.png"
-                    alt="Landingpages"
-                  />
-              Визитки
-            </FilterItem>
-            <FilterItem>
-              <Image 
-                layout="fixed"
-                width={40}
-                height={40}
-                src="/images/works/categories/catalog.png"
-                alt="Landingpages"
-              />
-              Каталог
-            </FilterItem>
-            <FilterItem>
-              <Image 
-                layout="fixed"
-                width={40}
-                height={40}
-                src="/images/works/categories/shop.png"
-                alt="Landingpages"
-              />
-              Интернет-магазин
-            </FilterItem>
-          </FilterContainer>
+          { <FilterElements data={sitesFilterItems} /> }
         </div>
 
         <div className="pageWidthContainer">
@@ -69,13 +60,21 @@ const Works =() => {
           Beatae nobis natus perspiciatis maiores sequi harum doloremque officia quasi ipsam quod accusantium provident adipisci corporis, fuga, ex reiciendis ut porro praesentium veniam perferendis aut. Sapiente ea dicta ipsa corrupti?</p>
           <br />
 
-          <WorksContainer 
-            works={[
-              {link:'/works/1', imageSource:'site_3.png', title:'Сайт-визитка компании "Адонис"', text:'Компания занимающаяся деятельностю по реализации оргтехники в оренбурге и регионах', cms:'Joomla'},
-              {link:'/works/1', imageSource:'site_2.png', title:'Сайт-визитка компании "Адонис"', text:'Компания занимающаяся деятельностю по реализации оргтехники в оренбурге и регионах', cms:'Joomla'},
-              {link:'/works/1', imageSource:'site_1.png', title:'Сайт-визитка компании "Адонис"', text:'Компания занимающаяся деятельностю по реализации оргтехники в оренбурге и регионах', cms:'Joomla'},
-            ]}
-          />
+          { 
+            sites 
+              ?  <WorksContainer 
+                    works={sites.map( s => {
+                      return { 
+                        link: `/works/${s.id}`,
+                        imageSource: s.image,
+                        title: s.title,
+                        text: s.description,
+                        cms: s.cms
+                      }
+                    })} 
+                />
+              : <p>Данные загружаются...</p>
+          }
         </div>
       </Page>
     </>

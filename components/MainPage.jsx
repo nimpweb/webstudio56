@@ -81,7 +81,7 @@ const MainPage = () => {
                 </Link>
                 <h5>{site.title}</h5>
                 <p className={s.content}>
-                  {site.content}
+                  {site.description}
                 </p>
                 <p className={s.content}>
                   CMS: <strong>{site.cms}</strong>

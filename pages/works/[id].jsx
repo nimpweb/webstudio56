@@ -1,14 +1,25 @@
 import React, { useEffect, useState, useCallback } from 'react'
+import { parse } from 'node-html-parser'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import db from '../../db.json'
 import Page from '../../components/Page';
+import { decodeHtmlSpecialChars  } from '../../utils/common.js' 
 
 const WorksDetail = (props) => {
   const router = useRouter();
   const workId = router.query.id ? parseInt(router.query.id) : null
+  console.log('WORK_ID:', workId);
   const getSiteInfo = useCallback(id => db.sites.filter(d => d.id === workId)[0]);
   const siteInfo = getSiteInfo(workId);
+
+
+  const parseContent = (text) => {
+    let content = text ?? '';
+    if (!content.length) return content;
+    return decodeHtmlSpecialChars(content);
+  }
+
 
   return (
     <>
@@ -23,15 +34,21 @@ const WorksDetail = (props) => {
         ]}
       >
         <div className="pageWidthContainer">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, nesciunt obcaecati. Facilis temporibus asperiores repudiandae praesentium ipsa sapiente aliquam exercitationem itaque, cumque tempore qui soluta inventore molestias accusantium aperiam nisi.
-          Tempora id excepturi odit consequatur velit eius, tempore repellendus eos possimus nulla modi itaque. Beatae sequi totam quidem magnam repellendus sit voluptatum vitae numquam voluptatibus impedit dolorum, eum aspernatur cum.
-          Expedita nulla, iusto commodi voluptates dolorem similique voluptatum maiores ratione praesentium quibusdam distinctio alias eaque ea explicabo porro veritatis blanditiis iure labore architecto doloribus. Hic natus totam et voluptas saepe!</p>
-            <pre>{ JSON.stringify(siteInfo, null, 2) }</pre>
-          </div>
-          <div className="d-flex">
-            {/* <Image layout="fixed" width={300} height={300} objectFit="cover" src={siteInfo?.image} /> */}
+          <div style={{display: "flex", padding: 10, gap: 10, objectFit: "contain"}}>
 
+            <div style={{position: "relative", border: "solid 1px #ccc", padding: 10, minWidth: "200px", minHeight: "500px"}}>
+              <Image 
+                src={siteInfo?.image} 
+                alt={siteInfo?.title}
+                layout="fill"                
+              />
+            </div>
+            <div dangerouslySetInnerHTML={{__html: siteInfo?.content }} />
           </div>
+          <div style={{textAlign: "center", marginTop: "20px", padding: "20px", boxShadow: "rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px"}}>
+            <span>Перейти на сайт: </span><a rel="nofollow" href={siteInfo?.href}>{siteInfo?.href}</a>
+          </div>
+        </div>
       </Page>
     </>
   )
