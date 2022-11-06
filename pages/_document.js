@@ -1,4 +1,5 @@
 import NextDocument, { Html, Head, Main, NextScript, Script } from 'next/document';
+import Image from 'next/image'
 
 export default class Document extends NextDocument {
   render() {
@@ -12,10 +13,12 @@ export default class Document extends NextDocument {
         <body>
           <noscript>
             <div>
-              <img
+              <Image 
                 src="https://mc.yandex.ru/watch/73980112"
-                style={{ position: 'absolute', left: '-9999px' }}
+                style={{position: "absolute", left: '-9999px'}}
                 alt=""
+                width={40}
+                height={40}
               />
             </div>
           </noscript>

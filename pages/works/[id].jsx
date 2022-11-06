@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
-import { parse } from 'node-html-parser'
+import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import db from '../../db.json'
@@ -8,18 +7,9 @@ import { decodeHtmlSpecialChars  } from '../../utils/common.js'
 
 const WorksDetail = (props) => {
   const router = useRouter();
-  const workId = router.query.id ? parseInt(router.query.id) : null
-  console.log('WORK_ID:', workId);
+  const workId = router.query.id ? parseInt(router.query.id) : null;
   const getSiteInfo = useCallback(id => db.sites.filter(d => d.id === workId)[0]);
   const siteInfo = getSiteInfo(workId);
-
-
-  const parseContent = (text) => {
-    let content = text ?? '';
-    if (!content.length) return content;
-    return decodeHtmlSpecialChars(content);
-  }
-
 
   return (
     <>
