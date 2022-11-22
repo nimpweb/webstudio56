@@ -33,7 +33,7 @@ const We =() => {
               Soluta quod eligendi veritatis cum dolorum. Ea, hic animi quasi explicabo repellendus recusandae possimus! Enim id sequi, architecto cumque quia facere vitae ex, quasi molestiae praesentium perferendis in modi ducimus?
               Ratione, earum laudantium odio sint nostrum iusto obcaecati nisi perspiciatis a tempora modi, eaque quis, fugit nam adipisci blanditiis saepe rerum assumenda et consectetur totam quasi. Officia totam ratione corrupti!</p>
               <hr className="smallLine" />
-              Вы можете связаться со мной - <a href="mailto:mail@mail.ru">mail@mail.ru</a> | <a href="tel:89228960175">8(922)896-01-75</a>
+              Вы можете связаться со мной - <a href="mailto:nimpweb@yandex.ru">nimpweb@yandex.ru</a> | <a href="tel:88000000000">8(800)000-00-00</a>
             </div>
           </ContentItem>
 
@@ -51,7 +51,7 @@ const We =() => {
                 Soluta quod eligendi veritatis cum dolorum. Ea, hic animi quasi explicabo repellendus recusandae possimus! Enim id sequi, architecto cumque quia facere vitae ex, quasi molestiae praesentium perferendis in modi ducimus?
                 Ratione, earum laudantium odio sint nostrum iusto obcaecati nisi perspiciatis a tempora modi, eaque quis, fugit nam adipisci blanditiis saepe rerum assumenda et consectetur totam quasi. Officia totam ratione corrupti!</p>
                 <hr className="smallLine" />
-                Вы можете связаться со мной - <a href="mailto:mail@mail.ru">mail@mail.ru</a> | <a href="tel:89228960175">8(922)896-01-75</a>
+                Вы можете связаться со мной - <a href="mailto:nimpweb@yandex.ru">nimpweb@yandex.ru</a> | <a href="tel:88000000000">8(800)000-00-00</a>
             </div>
           </ContentItem>
 

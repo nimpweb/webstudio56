@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
         <div className={s.footerItem}>
           <h3>Поддержка</h3>
-          <p>Телефон: <Link href="tel:89228960175">8-922-896-01-75</Link></p>
+          <p>Телефон: <Link href="tel:88000000000">8-800-000-00-00</Link></p>
           <p>Email: <Link href="mailto:nimpweb@yandex.ru">nimpweb@yandex.ru</Link></p>
           <Link href="/contacts">Контакты</Link>
           <Link href="/partners">Партнеры</Link>

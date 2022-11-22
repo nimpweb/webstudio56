@@ -27,7 +27,7 @@ function TopHeader() {
           </div>
         </div>
         <div className={s.headerRight}>
-          <Link className={s.headerMenuLink} href="tel:89228960175">+7(922)896-01-75</Link>
+          <Link className={s.headerMenuLink} href="tel:89228960175">8(800)000-00-00</Link>
           <div>
             <button className={s.headerMenuButton} onClick={ () => setPopupVisible(true)}>Подать заявку</button>
             { popupVisible &&  <Popup onClose={() => setPopupVisible(false)} visible={ popupVisible } />}
