@@ -5,7 +5,6 @@ import Page from '../../components/Page'
 import WorksContainer from '../../components/WorkContainer'
 import db from '../../db.json'
 
-
 const Works =() => {
   const [sites, setSites] = useState([])
   const [sitesFilterItems, setSitesFilterItems] = useState([])

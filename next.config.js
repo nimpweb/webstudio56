@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    images: { allowFutureImage: true },
+  },
   reactStrictMode: true,
   images: {
     // allowFutureImage: true,
-   domains: ['mc.yandex.ru']
+    domains: ['mc.yandex.ru'],
   },
   env: {
     siteUrl: 'https://webstudio56.ru',
