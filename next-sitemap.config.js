@@ -24,6 +24,7 @@ const config = {
     };
   },
   robotTxtOptions: {
+    includeNonIndexSitemaps: true,
     polices: [
       {
         userAgent: '*',
