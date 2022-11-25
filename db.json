@@ -32,6 +32,17 @@
       "description": "Интернет-магазин по продаже товаров для электричества, счетчики электроэнегии, розтки и т.п.",
       "content": "Интернет-магазин по продаже товаров для электричества, счетчики электроэнегии, розтки и т.п.",
       "image" : "/images/works/site_1.png"
+    },
+    {
+      "id" : 4,
+      "title": "Магазин \"Империал\"",
+      "href" : "https://ifood.org.il",
+      "cms": "уникальная", 
+      "categoryText": "Landingpage",
+      "categoryType": 1,
+      "description": "Рекламная страница интернет-магазина кошерной еды \"Империал\"",
+      "content": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus nam dolores accusantium, maxime, distinctio corporis, adipisci blanditiis eos earum repellendus iste magnam architecto soluta fugiat sint eligendi eius enim ipsa. Deleniti unde eligendi aperiam laudantium ab veritatis neque temporibus. Dignissimos atque voluptates consequuntur quisquam accusamus, corrupti similique ipsam est quibusdam. Veniam harum eveniet esse, ipsa aspernatur iste possimus voluptatum aliquid. Dicta enim est perspiciatis nam nesciunt quod quaerat corrupti tempore consectetur repudiandae, ullam voluptatem ipsum molestiae delectus doloribus magnam fuga at blanditiis. Velit, molestiae debitis? Exercitationem eius velit hic debitis!",
+      "image" : "/images/works/site_1.png"
     }
   ],
   "sites_filter_items": [

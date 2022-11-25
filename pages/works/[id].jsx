@@ -43,5 +43,4 @@ const WorksDetail = (props) => {
     </>
   )
 }
-
 export default WorksDetail
