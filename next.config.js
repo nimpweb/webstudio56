@@ -11,13 +11,13 @@ const nextConfig = {
   env: {
     siteUrl: 'https://webstudio56.ru',
     mailSendTo: 'nimpweb@yandex.ru',
-    mailSendFrom: 'nimpweb@yandex.ru',
+    mailSendFrom: 'nimpweb-mailler@yandex.ru',
     mailConfiguration: {
       host: 'smtp.yandex.ru',
       port: 465,
       auth: {
-        user: 'nimpweb@yandex.ru',
-        pass: 'Ghjnjnbg1983@',
+        user: 'nimpweb-mailler@yandex.ru',
+        pass: 'Hjvfirf1983!',
       },
     },
   },
